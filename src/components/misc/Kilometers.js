@@ -55,6 +55,7 @@ export default function Distance(props) {
       <Input
         type='text'
         inputmode='numeric'
+        inputProps={{ inputMode: 'numeric' }}
         pattern='[0-9]*'
         max='999'
         id={props.name}

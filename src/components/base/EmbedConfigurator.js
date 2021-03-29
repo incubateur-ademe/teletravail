@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 
+import StyleContext from 'utils/StyleContext'
+import UXContext from 'utils/UXContext'
 import ButtonOpen from './embedConfigurator/ButtonOpen'
 import Themes from './embedConfigurator/Themes'
 import Code from './embedConfigurator/Code'
 import MagicLink from 'components/base/MagicLink'
+import Select from 'components/misc/Select'
 
 const Wrapper = styled.div`
   position: relative;
   width: ${(props) => (props.open ? '30rem' : 0)};
-  color: ${(props) => props.theme.colors.main};
   transition: all 400ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
@@ -67,31 +69,45 @@ const Subtitle = styled.h3`
 `
 const Contact = styled.p``
 export default function EmbedConfigurator(props) {
+  const { themes, theme, setTheme } = useContext(StyleContext)
+  const {
+    configuratorOpen,
+    setConfiguratorOpen,
+    typeShare,
+    setTypeShare,
+  } = useContext(UXContext)
+
   return (
-    <Wrapper open={props.configuratorOpen}>
+    <Wrapper open={configuratorOpen}>
       <ButtonOpen
-        open={props.configuratorOpen}
-        onClick={() => props.setConfiguratorOpen((prevOpen) => !prevOpen)}
+        open={configuratorOpen}
+        onClick={() => setConfiguratorOpen((prevOpen) => !prevOpen)}
       />
-      <Content open={props.configuratorOpen}>
+      <Content open={configuratorOpen}>
         <ButtonClose
           onClick={() => {
-            props.onClose && props.onClose()
-            props.setTheme('default')
-            props.setConfiguratorOpen(false)
+            setTheme('default')
+            setConfiguratorOpen(false)
           }}
         >
           +
         </ButtonClose>
-        <Title>Intégrer ce simulateur</Title>
-        <Code id={props.id} />
+        <Title>
+          Intégrer{' '}
+          <Select
+            fancy
+            value={typeShare}
+            onChange={setTypeShare}
+            options={[
+              { value: 'simulator', label: `ce simulateur` },
+              { value: 'result', label: `mon résultat` },
+            ]}
+          />
+        </Title>
+        <Code id={props.id} typeShare={typeShare} />
         <Subtitle>Options d'intégration</Subtitle>
         {props.children}
-        <Themes
-          themes={props.themes}
-          theme={props.theme}
-          setTheme={props.setTheme}
-        />
+        <Themes themes={themes} theme={theme} setTheme={setTheme} />
         <Contact>
           Vous souhaitez aller plus loin dans l'intégration de ce calculateur ou
           des données ?{' '}

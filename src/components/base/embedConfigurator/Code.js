@@ -35,18 +35,16 @@ const Explication = styled.p`
 export default function Code(props) {
   let location = useLocation()
 
-  const [script, setScript] = useState(
-    `<script id="${props.id || 'datagir'}" src="${
-      window.location.origin
-    }/iframe.js" data-search="${location.search}"></script>`
-  )
+  const [script, setScript] = useState(null)
   useEffect(() => {
     setScript(
       `<script id="${props.id || 'datagir'}" src="${
         window.location.origin
-      }/iframe.js" data-search="${location.search}"></script>`
+      }/iframe.js" data-search="${
+        props.typeShare === 'result' ? location.search : ''
+      }"></script>`
     )
-  }, [location.search, props.id])
+  }, [location.search, props.id, props.typeShare])
 
   const [copied, setCopied] = useState(false)
   return (

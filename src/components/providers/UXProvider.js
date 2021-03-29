@@ -18,6 +18,7 @@ export default function UXProvider(props) {
         setConfiguratorOpen: (value) => {
           if (value) {
             setShareOpen(false)
+            setTypeShare('simulator')
           }
           setConfiguratorOpen(value)
         },

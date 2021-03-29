@@ -18,8 +18,8 @@ export default function Adjustment() {
         name='adjustment'
       />{' '}
       en plus par jour pour faire les choses que je{' '}
-      {timing === 'avant' ? 'faisais avant' : 'fais actuellement'} en allant ou
-      en revenant du travail.
+      {timing === 'avant' ? 'faisais avant' : 'fais actuellement'} sur le chemin
+      du travail.
     </Wrapper>
   )
 }

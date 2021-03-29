@@ -13,13 +13,18 @@ export default function FootprintModal() {
 
   return (
     <Modal open={footprint} setOpen={setFootprint}>
-      <Title>Empreinte Carbonne Annuelle</Title>
+      <Title>Empreinte Carbonne annuelle</Title>
       <Text>
-        Aujourd'hui, un français en émet en moyenne 10 tonnes par an (
+        Aujourd'hui, un·e français·e en émet en moyenne 10 tonnes des gaz à effet de serre (GES) par an (
         <MagicLink to='https://www.statistiques.developpement-durable.gouv.fr/estimation-de-lempreinte-carbone-de-1995-2019'>
           source
         </MagicLink>
-        ).
+        ) quand la cible a atteindre pour 
+        <MagicLink to={'https://datagir.ademe.fr/blog/budget-empreinte-carbone-c-est-quoi/'}>
+          respecter l'accord de Paris
+        </MagicLink>
+        {' '}est d'environ 2 tonnes de GES par an et par personne avec un premier palier de 
+        réduction de -40% de GES d'ici 2030 (l'Europe par le de -55%).
       </Text>
       <Text>
         Si vous souhaitez aller plus loin dans votre démarche, vous pouvez
@@ -27,6 +32,7 @@ export default function FootprintModal() {
         <MagicLink to={'https://nosgestesclimat.fr/'}>
           Nos Gestes Climat
         </MagicLink>
+        .
       </Text>
     </Modal>
   )

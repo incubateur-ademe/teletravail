@@ -59,15 +59,10 @@ export default function Distance(props) {
         max='999'
         id={props.name}
         width={String(props.value).length}
-        placeholder={props.value === 0 ? '00' : ''}
-        value={props.value || ''}
+        placeholder={props.value === 0 ? '00' : props.placeholder}
+        value={props.value}
         onChange={(e) => {
-          if (
-            (Number(e.target.value) && Number(e.target.value) < 999) ||
-            e.target.value === ''
-          ) {
-            props.onChange(Number(e.target.value))
-          }
+          props.onChange(e.target.value)
         }}
         onFocus={() => setPristine(false)}
         pristine={pristine}

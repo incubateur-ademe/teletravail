@@ -6,7 +6,9 @@ import Kilometers from 'components/misc/Kilometers'
 
 const Wrapper = styled.span``
 export default function Adjustment() {
-  const { timing, adjustment, setAdjustment } = useContext(SearchContext)
+  const { timing, distance, adjustment, setAdjustment } = useContext(
+    SearchContext
+  )
 
   return (
     <Wrapper>
@@ -16,6 +18,7 @@ export default function Adjustment() {
         value={adjustment}
         onChange={setAdjustment}
         name='adjustment'
+        placeholder={('0' + Math.round(distance * 0.25)).slice(-2)}
       />{' '}
       en plus par jour pour faire les choses que je{' '}
       {timing === 'avant' ? 'faisais avant' : 'fais actuellement'} sur le chemin

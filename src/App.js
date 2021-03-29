@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { QueryParamProvider } from 'use-query-params'
+
+import { GlobalStyle } from 'utils/styles'
+import StyleProvider from 'components/providers/StyleProvider'
+import ModalProvider from 'components/providers/ModalProvider'
+import UXProvider from 'components/providers/UXProvider'
+import TransportationProvider from 'components/providers/TransportationProvider'
+import SearchProvider from 'components/providers/SearchProvider'
+
+import CO2EModal from 'components/modals/CO2EModal'
+import FootprintModal from 'components/modals/FootprintModal'
+import Web from 'components/layout/Web'
+import Iframe from 'components/layout/Iframe'
+import Comparator from 'views/Comparator'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <QueryParamProvider ReactRouterRoute={Route}>
+        <UXProvider>
+          <StyleProvider>
+            <ModalProvider>
+              <TransportationProvider>
+                <SearchProvider>
+                  <GlobalStyle />
+                  <Switch>
+                    <Route path='/embed'>
+                      <Iframe>
+                        <Comparator iframe />
+                      </Iframe>
+                    </Route>
+                    <Route>
+                      <Web>
+                        <Switch>
+                          <Route path='/'>
+                            <Comparator />
+                          </Route>
+                        </Switch>
+                      </Web>
+                    </Route>
+                  </Switch>
+                  <CO2EModal />
+                  <FootprintModal />
+                </SearchProvider>
+              </TransportationProvider>
+            </ModalProvider>
+          </StyleProvider>
+        </UXProvider>
+      </QueryParamProvider>
+    </Router>
+  )
 }
 
-export default App;
+export default App

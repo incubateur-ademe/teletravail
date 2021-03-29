@@ -7,13 +7,7 @@ export default function TransportationProvider(props) {
   useEffect(() => {
     fetch('/data/transportations.json')
       .then((res) => res.json())
-      .then((res) =>
-        setTransportations(
-          res.sort((a, b) =>
-            a.label.fr.normalize('NFD') > b.label.fr.normalize('NFD') ? 1 : -1
-          )
-        )
-      )
+      .then(setTransportations)
   }, [])
 
   return (

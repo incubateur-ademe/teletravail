@@ -9,7 +9,7 @@
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv",
     "emoji": { "main": "🚄" },
-    "default": true,
+    "default": false,
     "display": {
       "min": 150
     },
@@ -29,7 +29,7 @@
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=Train",
     "emoji": { "main": "🚈" },
-    "default": true,
+    "default": false,
     "display": {
       "min": 31
     },
@@ -42,7 +42,7 @@
   {
     "id": 4,
     "label": {
-      "fr": "Voiture (thermique)"
+      "fr": "Voiture (moteur thermique)"
     },
     "description": {
       "fr": "193 gCO2e/km/véhicule ; Base Carbone ADEME, moyenne nationale toutes distances, toutes carburations. <br/>Les données intègrent l’amont et la combustion du carburant. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières."
@@ -61,14 +61,14 @@
   {
     "id": 5,
     "label": {
-      "fr": "Voiture (électrique)"
+      "fr": "Voiture (moteur électrique)"
     },
     "description": {
       "fr": "19,8 gCO2e/km/véhicule ; Base Carbone ADEME, Véhicule Electrique compact - \"Coeur de gamme\". <br/>Les données intègrent les émissions liées à l'électricité pour recharger le véhicule. Comme pour les autres modes de transports, elles n’intègrent pas la fabrication des véhicules et les émissions liées aux infrastructures routières."
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=voiture",
     "emoji": { "main": "🚗", "secondary": "⚡" },
-    "default": true,
+    "default": false,
     "display": {},
     "values": [
       {
@@ -87,7 +87,7 @@
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=autocar",
     "emoji": { "main": "🚌" },
-    "default": true,
+    "default": false,
     "display": {
       "min": 16
     },
@@ -106,7 +106,7 @@
       "fr": "0 gCO2e/km/personne ; ADEME"
     },
     "emoji": { "main": "🚴" },
-    "default": true,
+    "default": false,
     "display": {
       "max": 30
     },
@@ -126,7 +126,7 @@
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv",
     "emoji": { "main": "🚴", "secondary": "⚡" },
-    "default": true,
+    "default": false,
     "display": {
       "max": 30
     },
@@ -140,7 +140,7 @@
   {
     "id": 9,
     "label": {
-      "fr": "Bus (thermique)"
+      "fr": "Bus (moteur thermique)"
     },
     "description": {
       "fr": "103 gCO2e/km/personne ; Base Carbone ADEME, Autobus - Gazole"
@@ -227,7 +227,7 @@
       "fr": "Deux roues thermiques > 250cm3 ;<br/>168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)"
     },
     "emoji": { "main": "🏍️" },
-    "default": true,
+    "default": false,
     "display": {
       "min": 51
     },
@@ -282,7 +282,7 @@
   {
     "id": 16,
     "label": {
-      "fr": "Bus (électrique)"
+      "fr": "Bus (moteur électrique)"
     },
     "description": {
       "fr": "21,7 gCO2e/km/personne ; Base Carbone ADEME, Autobus - GNV"
@@ -302,7 +302,7 @@
   {
     "id": 21,
     "label": {
-      "fr": "Bus (GNV)"
+      "fr": "Bus (moteur GNV)"
     },
     "description": {
       "fr": "113 gCO2e/km/personne ; Base Carbone ADEME, Autobus - GNV"
@@ -328,7 +328,7 @@
       "fr": "0 gCO2e/km/personne ; ADEME"
     },
     "emoji": { "main": "🚶" },
-    "default": true,
+    "default": false,
     "display": {
       "max": 30
     },
@@ -348,7 +348,7 @@
     },
     "source": "https://www.bilans-ges.ademe.fr/fr/basecarbone/donnees-consulter/liste-element?recherche=tgv",
     "emoji": { "main": "🛴", "secondary": "⚡" },
-    "default": true,
+    "default": false,
     "display": {
       "max": 30
     },

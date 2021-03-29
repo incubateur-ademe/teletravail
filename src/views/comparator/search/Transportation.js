@@ -21,10 +21,30 @@ export default function Transportation() {
       <Select
         value={transportation}
         onChange={setTransportation}
-        options={transportations.map((transportation) => ({
-          value: transportation.id,
-          label: transportation.label.fr,
-        }))}
+        options={transportations
+          .filter((transportation) => transportation.default)
+          .map((transportation) => ({
+            value: transportation.id,
+            label: transportation.label.fr,
+          }))
+          .concat({
+            value: 'separator',
+            label: '──────────',
+            disabled: true,
+          })
+          .concat(
+            transportations
+              .filter((transportation) => !transportation.default)
+              .sort((a, b) =>
+                a.label.fr.normalize('NFD') > b.label.fr.normalize('NFD')
+                  ? 1
+                  : -1
+              )
+              .map((transportation) => ({
+                value: transportation.id,
+                label: transportation.label.fr,
+              }))
+          )}
       />
     </Wrapper>
   )

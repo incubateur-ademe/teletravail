@@ -1,6 +1,6 @@
 {
-  "short_name": "Impact Transport",
-  "name": "Mon Impact Transport",
+  "short_name": "Télétravail",
+  "name": "Télétravail",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#1EFFBC",
+  "background_color": "#0D19A3"
 }

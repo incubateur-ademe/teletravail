@@ -11,7 +11,6 @@ export default function Timing() {
     <Wrapper>
       Quand{' '}
       <Select
-        discreet
         value={timing}
         onChange={setTiming}
         options={[

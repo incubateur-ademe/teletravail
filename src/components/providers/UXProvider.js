@@ -8,6 +8,7 @@ export default function UXProvider(props) {
 
   const [configuratorOpen, setConfiguratorOpen] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)
+  const [typeShare, setTypeShare] = useState('simulator')
   const [details, setDetails] = useState(false)
 
   return (
@@ -24,11 +25,14 @@ export default function UXProvider(props) {
         setShareOpen: (value) => {
           if (value) {
             setConfiguratorOpen(false)
+            setTypeShare('simulator')
           }
           setShareOpen(value)
         },
         details,
         setDetails,
+        typeShare,
+        setTypeShare,
       }}
     >
       {props.children}

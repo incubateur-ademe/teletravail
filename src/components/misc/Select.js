@@ -38,6 +38,8 @@ const Input = styled.select`
   color: transparent;
   background-color: transparent;
   border: none;
+  box-shadow: 0px ${(props) => (props.fancy ? '0.1875rem' : '0px')} 0px 0px
+    ${(props) => props.theme.colors.main};
   transition: box-shadow 300ms ease-out;
   appearance: none;
   cursor: pointer;
@@ -69,6 +71,7 @@ export default function Select(props) {
         id={props.name}
         name={props.name}
         value={props.value}
+        fancy={props.fancy}
         onChange={(e) => {
           props.onChange(e.currentTarget.value)
         }}

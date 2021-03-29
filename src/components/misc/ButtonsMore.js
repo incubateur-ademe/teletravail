@@ -23,7 +23,9 @@ const Wrapper = styled.div`
 `
 export default function ButtonsMore() {
   const { kgco2 } = useContext(SearchContext)
-  const { setConfiguratorOpen, setShareOpen } = useContext(UXContext)
+  const { setConfiguratorOpen, setShareOpen, setTypeShare } = useContext(
+    UXContext
+  )
 
   return (
     <Wrapper visible={kgco2 || kgco2 === 0}>
@@ -35,6 +37,7 @@ export default function ButtonsMore() {
             behavior: 'smooth',
           })
           setShareOpen(true)
+          setTypeShare('result')
         }}
       >
         Je partage mon résultat

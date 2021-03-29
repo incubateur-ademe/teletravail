@@ -14,7 +14,13 @@ export default function FootprintModal() {
   return (
     <Modal open={footprint} setOpen={setFootprint}>
       <Title>Empreinte Carbonne Annuelle</Title>
-      <Text>Aujourd'hui, un français en émet en moyenne 12 tonnes par an.</Text>
+      <Text>
+        Aujourd'hui, un français en émet en moyenne 10 tonnes par an (
+        <MagicLink to='https://www.statistiques.developpement-durable.gouv.fr/estimation-de-lempreinte-carbone-de-1995-2019'>
+          source
+        </MagicLink>
+        ).
+      </Text>
       <Text>
         Si vous souhaitez aller plus loin dans votre démarche, vous pouvez
         calculer votre empreinte sur le climat grace à notre simulateur{' '}

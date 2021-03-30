@@ -88,14 +88,23 @@ export default function Footer(props) {
             carbone.
           </Text>
           <Text>
-            Équivalent CO₂ par personne en France.{' '}
+            <strong>Équivalent CO₂ par personne en France.</strong>
+          </Text>
+          <Text>
+            ⚠️{' '}
             <strong>
               Sont inclus les émissions directes, et la production et
               distribution de carburant et d'électricité
             </strong>
-            . La construction des véhicules (voiture, vélo, batterie, train,
-            avion...) et des infrastructures (routes, rails, aéroports...) n'est
-            pas incluse.{' '}
+            .
+          </Text>
+          <Text>
+            ⚠️ <strong>La construction des véhicules</strong> (voiture, vélo,
+            batterie, train, avion...) <strong>et des infrastructures</strong>{' '}
+            (routes, rails, aéroports...) <strong>n'est pas incluse.</strong>
+          </Text>
+          <Text>
+            ⚠️{' '}
             <strong>
               Ne sont pas non plus inclus tous les effets rebonds possibles
             </strong>{' '}

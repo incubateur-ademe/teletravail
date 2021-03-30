@@ -81,7 +81,10 @@ export default function EmbedConfigurator(props) {
     <Wrapper open={configuratorOpen}>
       <ButtonOpen
         open={configuratorOpen}
-        onClick={() => setConfiguratorOpen((prevOpen) => !prevOpen)}
+        onClick={() => {
+          setTheme('default')
+          setConfiguratorOpen((prevOpen) => !prevOpen)
+        }}
       />
       <Content open={configuratorOpen}>
         <ButtonClose

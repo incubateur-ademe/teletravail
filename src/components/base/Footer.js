@@ -1,12 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import ademe from './footer/ademe.jpg'
 import repufrancaise from './footer/repufrancaise.jpg'
 
-import UXContext from 'utils/UXContext'
 import MagicLink from 'components/base/MagicLink'
 import ThemeToggle from 'components/base/ThemeToggle'
+import Emoji from 'components/base/Emoji'
+import ContactPrompt from 'components/base/ContactPrompt'
 import Logo from './footer/Logo'
 import Contact from './footer/Contact'
 
@@ -31,14 +32,16 @@ const Section = styled.div`
   h2 {
     color: ${(props) => props.theme.colors[props.color || 'text']};
   }
+
+  h2 {
+    font-size: 1.75rem;
+  }
 `
 const CenterSection = styled(Section)`
   align-items: center;
 `
 const Text = styled.p``
-const Title = styled.h2`
-  font-size: 1.75rem;
-`
+const Title = styled.h2``
 const LogosWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -55,19 +58,8 @@ const Institution = styled.img`
   display: block;
   height: 5.625em;
 `
-const StyledLink = styled.button`
-  display: inline;
-  margin: 0;
-  padding: 0;
-  color: ${(props) => props.theme.colors.main};
-  text-decoration: underline;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-`
-export default function Footer(props) {
-  const { setConfiguratorOpen } = useContext(UXContext)
 
+export default function Footer(props) {
   return (
     <Wrapper background={props.background} id='about'>
       <Content>
@@ -91,7 +83,7 @@ export default function Footer(props) {
             <strong>Équivalent CO₂ par personne en France.</strong>
           </Text>
           <Text>
-            ⚠️{' '}
+            <Emoji>⚠️</Emoji>{' '}
             <strong>
               Sont inclus les émissions directes, et la production et
               distribution de carburant et d'électricité
@@ -99,12 +91,13 @@ export default function Footer(props) {
             .
           </Text>
           <Text>
-            ⚠️ <strong>La construction des véhicules</strong> (voiture, vélo,
-            batterie, train, avion...) <strong>et des infrastructures</strong>{' '}
-            (routes, rails, aéroports...) <strong>n'est pas incluse.</strong>
+            <Emoji>⚠️</Emoji> <strong>La construction des véhicules</strong>{' '}
+            (voiture, vélo, batterie, train, avion...){' '}
+            <strong>et des infrastructures</strong> (routes, rails,
+            aéroports...) <strong>n'est pas incluse.</strong>
           </Text>
           <Text>
-            ⚠️{' '}
+            <Emoji>⚠️</Emoji>{' '}
             <strong>
               Ne sont pas non plus inclus tous les effets rebonds possibles
             </strong>{' '}
@@ -122,51 +115,7 @@ export default function Footer(props) {
             .
           </Text>
         </Section>
-        <Section>
-          <Title>
-            Comment intégrer ces données à mon site ou application ?
-          </Title>
-          <Text>
-            <strong>
-              Vous souhaitez afficher ce simulateur sur votre site ?
-            </strong>
-            <br />
-            Personnalisez le et intégrez le facilement grace à{' '}
-            <StyledLink
-              onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  left: 0,
-                  behavior: 'smooth',
-                })
-                setConfiguratorOpen(true)
-              }}
-            >
-              notre configurateur
-            </StyledLink>
-            .
-          </Text>
-
-          <Text>
-            <strong>Vous souhaitez réutiliser les données brutes ?</strong>
-            <br />
-            Contactez nous à{' '}
-            <MagicLink to='mailto:datagir@ademe.fr'>
-              datagir@ademe.fr
-            </MagicLink>{' '}
-            pour bénéficier de notre expertise et accompagnement.
-          </Text>
-          <Text>
-            <strong>Vous souhaitez réutiliser le code du simulateur ?</strong>
-            <br />
-            Ce simulateur est développé de manière ouverte (open source).
-            L’ensemble du code est{' '}
-            <MagicLink to='https://github.com/datagir/monimpacttransport'>
-              disponible librement
-            </MagicLink>
-            .
-          </Text>
-        </Section>
+        <ContactPrompt />
         <Section>
           <Title>Nous contacter</Title>
           <Text>

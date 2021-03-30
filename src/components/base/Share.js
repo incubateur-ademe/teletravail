@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
 
 import UXContext from 'utils/UXContext'
-import MagicLink from 'components/base/MagicLink'
+import ContactPrompt from 'components/base/ContactPrompt'
 import Select from 'components/misc/Select'
 import ButtonOpen from './share/ButtonOpen'
 import Link from './share/Link'
@@ -144,13 +144,7 @@ export default function Share() {
           <Whatsapp title={title} message={message} url={url} />
         </ShareButtons>
         <Link url={url} />
-        <Contact>
-          Vous souhaitez aller plus loin dans l'intégration de ce calculateur ou
-          des données ?{' '}
-          <MagicLink to='https://datagir.ademe.fr/#contact'>
-            Contactez-nous
-          </MagicLink>
-        </Contact>
+        <ContactPrompt />
       </Content>
     </Wrapper>
   )

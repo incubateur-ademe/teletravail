@@ -4,7 +4,7 @@ import copy from 'copy-to-clipboard'
 
 const Wrapper = styled.div`
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 `
 const Text = styled.input`
   position: relative;

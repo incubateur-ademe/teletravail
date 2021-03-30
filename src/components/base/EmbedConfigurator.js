@@ -7,6 +7,7 @@ import ButtonOpen from './embedConfigurator/ButtonOpen'
 import Themes from './embedConfigurator/Themes'
 import Code from './embedConfigurator/Code'
 import MagicLink from 'components/base/MagicLink'
+import ContactPrompt from 'components/base/ContactPrompt'
 import Select from 'components/misc/Select'
 
 const Wrapper = styled.div`
@@ -111,13 +112,7 @@ export default function EmbedConfigurator(props) {
         <Subtitle>Options d'intégration</Subtitle>
         {props.children}
         <Themes themes={themes} theme={theme} setTheme={setTheme} />
-        <Contact>
-          Vous souhaitez aller plus loin dans l'intégration de ce calculateur ou
-          des données ?{' '}
-          <MagicLink to='https://datagir.ademe.fr/#contact'>
-            Contactez-nous
-          </MagicLink>
-        </Contact>
+        <ContactPrompt configurator />
       </Content>
     </Wrapper>
   )

@@ -14,6 +14,7 @@ export default function Transportation() {
   const { distance, transportation, setTransportation } = useContext(
     SearchContext
   )
+  console.log(transportations)
   return (
     <Wrapper visible={distance}>
       <br />
@@ -21,20 +22,22 @@ export default function Transportation() {
       <Select
         value={transportation}
         onChange={setTransportation}
-        options={transportations
-          .filter((transportation) => transportation.default)
-          .map((transportation) => ({
-            value: transportation.id,
-            label: transportation.label.fr,
-          }))
+        options={[{ value: '', label: '', disabled: true }]
+          .concat(
+            [...transportations]
+              .filter((transportation) => transportation.default)
+              .map((transportation) => ({
+                value: transportation.id,
+                label: transportation.label.fr,
+              }))
+          )
           .concat({
             value: 'separator',
             label: '──────────',
             disabled: true,
           })
           .concat(
-            transportations
-              .filter((transportation) => !transportation.default)
+            [...transportations]
               .sort((a, b) =>
                 a.label.fr.normalize('NFD') > b.label.fr.normalize('NFD')
                   ? 1

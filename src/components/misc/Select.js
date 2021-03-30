@@ -70,15 +70,15 @@ export default function Select(props) {
       <Input
         id={props.name}
         name={props.name}
-        value={props.value}
+        value={props.value ? props.value : ''}
         fancy={props.fancy}
         onChange={(e) => {
           props.onChange(e.currentTarget.value)
         }}
       >
-        {props.options.map((option) => (
+        {props.options.map((option, index) => (
           <option
-            key={option.value}
+            key={option.value + '-' + index}
             value={option.value}
             disabled={option.disabled}
           >

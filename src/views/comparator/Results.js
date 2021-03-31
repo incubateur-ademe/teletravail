@@ -52,7 +52,7 @@ export default function Results() {
 
   const { timing, kgco2 } = useContext(SearchContext)
 
-  const { setCO2E, setFootprint } = useContext(ModalContext)
+  const { setCO2E, setFootprint, setPerimeter } = useContext(ModalContext)
 
   return (
     <Wrapper>
@@ -64,8 +64,8 @@ export default function Results() {
         <Color onClick={() => setCO2E(true)}>
           {Math.round(kgco2)} kgCO2<sub>e</sub>
         </Color>{' '}
-        par an.
-        <br />
+        par an{' '}
+        <Color onClick={() => setPerimeter(true)}>sur mes déplacements</Color>.
         Soit{' '}
         <Color onClick={() => setFootprint(true)}>
           {Math.round((kgco2 / 12000) * 10000) / 100}%

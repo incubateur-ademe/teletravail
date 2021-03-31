@@ -31,8 +31,7 @@ const Content = styled.div`
   width: ${(props) => props.width || '30em'};
   max-width: 90vw;
   max-height: 90vh;
-  margin: 2em;
-  padding: 2em;
+  margin: 2rem;
   color: ${(props) => props.theme.colors.text};
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 1em;
@@ -47,11 +46,15 @@ const ButtonClose = styled.div`
   position: absolute;
   top: 0.5em;
   right: 0.5em;
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: 700;
   transform: rotate(45deg);
   cursor: pointer;
   line-height: 0.5;
+`
+const Scroll = styled.div`
+  overflow-y: scroll;
+  padding: 2rem;
 `
 export default function Modal(props) {
   return (
@@ -64,7 +67,7 @@ export default function Modal(props) {
         backgroundColor={props.backgroundColor}
       >
         <ButtonClose onClick={() => props.setOpen(false)}>+</ButtonClose>
-        {props.children}
+        <Scroll>{props.children}</Scroll>
       </Content>
     </Wrapper>
   )

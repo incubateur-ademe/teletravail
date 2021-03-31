@@ -11,6 +11,7 @@ import SearchProvider from 'components/providers/SearchProvider'
 
 import CO2EModal from 'components/modals/CO2EModal'
 import FootprintModal from 'components/modals/FootprintModal'
+import PerimeterModal from 'components/modals/PerimeterModal'
 import Web from 'components/layout/Web'
 import Iframe from 'components/layout/Iframe'
 import Comparator from 'views/Comparator'
@@ -43,6 +44,7 @@ function App() {
                   </Switch>
                   <CO2EModal />
                   <FootprintModal />
+                  <PerimeterModal />
                 </SearchProvider>
               </TransportationProvider>
             </ModalProvider>

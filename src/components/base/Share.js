@@ -89,7 +89,6 @@ const ShareButtons = styled.div`
     }
   }
 `
-const Contact = styled.p``
 export default function Share() {
   const { shareOpen, setShareOpen, typeShare, setTypeShare } = useContext(
     UXContext

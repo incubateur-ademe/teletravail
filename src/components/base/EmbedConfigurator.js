@@ -6,7 +6,6 @@ import UXContext from 'utils/UXContext'
 import ButtonOpen from './embedConfigurator/ButtonOpen'
 import Themes from './embedConfigurator/Themes'
 import Code from './embedConfigurator/Code'
-import MagicLink from 'components/base/MagicLink'
 import ContactPrompt from 'components/base/ContactPrompt'
 import Select from 'components/misc/Select'
 
@@ -68,7 +67,6 @@ const Subtitle = styled.h3`
   font-size: 1.3em;
   margin-bottom: 1rem;
 `
-const Contact = styled.p``
 export default function EmbedConfigurator(props) {
   const { themes, theme, setTheme } = useContext(StyleContext)
   const {

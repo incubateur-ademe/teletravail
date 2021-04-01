@@ -8,8 +8,8 @@ import MagicLink from 'components/base/MagicLink'
 import ThemeToggle from 'components/base/ThemeToggle'
 import Emoji from 'components/base/Emoji'
 import ContactPrompt from 'components/base/ContactPrompt'
+import Button from 'components/base/Button'
 import Logo from './footer/Logo'
-import Contact from './footer/Contact'
 
 const Wrapper = styled.div`
   position: relative;
@@ -28,12 +28,8 @@ const Section = styled.div`
   align-items: flex-start;
   margin-bottom: 1rem;
 
-  p,
-  h2 {
-    color: ${(props) => props.theme.colors[props.color || 'text']};
-  }
-
-  h2 {
+  h2,
+  h3 {
     font-size: 1.75rem;
   }
 `
@@ -58,7 +54,9 @@ const Institution = styled.img`
   display: block;
   height: 5.625em;
 `
-
+const StyledButton = styled(Button)`
+  align-self: center;
+`
 export default function Footer(props) {
   return (
     <Wrapper background={props.background} id='about'>
@@ -115,22 +113,8 @@ export default function Footer(props) {
             .
           </Text>
         </Section>
-        <ContactPrompt />
         <Section>
-          <Title>Nous contacter</Title>
-          <Text>
-            Vous souhaitez nous contacter pour{' '}
-            <strong>
-              obtenir de l'aide sur l'intégration des données ou des simulateurs
-            </strong>{' '}
-            ? Ou alors pour{' '}
-            <strong>
-              nous signaler un bug, nous faire une suggestion ou donner votre
-              avis sur ce simulateur
-            </strong>{' '}
-            ? Utilisez le formulaire ci‑dessous :
-          </Text>
-          <Contact />
+          <ContactPrompt />
         </Section>
         <Section>
           <Title>Qui sommes-nous ?</Title>
@@ -157,6 +141,9 @@ export default function Footer(props) {
             par l'appropriation et l’intégration de ces données afin d’apporter
             l’information au plus près des citoyens.
           </Text>
+          <StyledButton to='https://datagir.ademe.fr/#applications'>
+            Voir tous nos simulateurs
+          </StyledButton>
         </Section>
       </Content>
       <LogosWrapper>

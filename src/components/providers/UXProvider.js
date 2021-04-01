@@ -8,6 +8,7 @@ export default function UXProvider(props) {
 
   const [configuratorOpen, setConfiguratorOpen] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)
+  const [contactOpen, setContactOpen] = useState(false)
   const [typeShare, setTypeShare] = useState('simulator')
   const [details, setDetails] = useState(false)
 
@@ -18,6 +19,7 @@ export default function UXProvider(props) {
         setConfiguratorOpen: (value) => {
           if (value) {
             setShareOpen(false)
+            setContactOpen(false)
             setTypeShare('simulator')
           }
           setConfiguratorOpen(value)
@@ -26,9 +28,19 @@ export default function UXProvider(props) {
         setShareOpen: (value) => {
           if (value) {
             setConfiguratorOpen(false)
+            setContactOpen(false)
             setTypeShare('simulator')
           }
           setShareOpen(value)
+        },
+        contactOpen,
+        setContactOpen: (value) => {
+          if (value) {
+            setShareOpen(false)
+            setConfiguratorOpen(false)
+            setTypeShare('simulator')
+          }
+          setContactOpen(value)
         },
         details,
         setDetails,

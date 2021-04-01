@@ -6,7 +6,8 @@ import useWindowSize from 'hooks/useWindowSize'
 import Footer from 'components/base/Footer'
 import ThemeToggle from 'components/base/ThemeToggle'
 import Share from 'components/base/Share'
-import Embed from 'components/misc/Embed'
+import Embed from 'components/base/Embed'
+import Contact from 'components/base/Contact'
 import ButtonsMore from 'components/misc/ButtonsMore'
 
 const Wrapper = styled.div`
@@ -53,6 +54,7 @@ export default function Web(props) {
       </Content>
       <Embed />
       <Share />
+      <Contact />
     </Wrapper>
   )
 }

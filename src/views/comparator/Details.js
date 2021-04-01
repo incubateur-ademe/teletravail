@@ -10,7 +10,7 @@ const Wrapper = styled.p`
   align-self: flex-start;
   width: 31.25rem;
   max-height: ${(props) => (props.visible ? '10em' : '0')};
-  margin: 0 0;
+  margin: -2rem 0 3rem;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.7;

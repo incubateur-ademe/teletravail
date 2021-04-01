@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 const Content = styled.div`
   align-self: flex-end;
   width: 31.25rem;
-  margin-bottom: 5rem;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.7;
@@ -35,9 +34,13 @@ const Color = styled.span`
   color: ${(props) => props.theme.colors.main};
   cursor: pointer;
 `
+const Small = styled.p`
+  margin: 0;
+  font-size: 0.75rem;
+`
 const StyledButton = styled(Button)`
   position: absolute;
-  top: 100%;
+  top: calc(100% + 3rem);
   left: 0;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity 1000ms ${(props) => (props.visible ? '2000ms' : '0ms')};
@@ -80,6 +83,10 @@ export default function Results() {
           />
           annuelle.
         </Color>
+        <Small>
+          (<Color onClick={() => setPerimeter(true)}>d'autres émissions</Color>{' '}
+          ont peut-être augmenté)
+        </Small>
       </Content>
       {!details && (
         <StyledButton

@@ -18,8 +18,8 @@ export default function Comparator() {
   return (
     <Wrapper>
       <Search />
-      <Results />
       <Details />
+      <Results />
     </Wrapper>
   )
 }

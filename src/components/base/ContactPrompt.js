@@ -4,11 +4,8 @@ import styled from 'styled-components'
 import UXContext from 'utils/UXContext'
 import MagicLink from 'components/base/MagicLink'
 
-const Wrapper = styled.div`
-  margin-bottom: 1rem;
-`
 const Text = styled.p``
-const Title = styled.h2``
+const Title = styled.h3``
 const StyledLink = styled.button`
   display: inline;
   margin: 0;
@@ -23,7 +20,7 @@ export default function ContactPrompt(props) {
   const { setConfiguratorOpen } = useContext(UXContext)
 
   return (
-    <Wrapper>
+    <>
       {!props.configurator && (
         <>
           <Title>
@@ -70,6 +67,6 @@ export default function ContactPrompt(props) {
         </MagicLink>
         .
       </Text>
-    </Wrapper>
+    </>
   )
 }

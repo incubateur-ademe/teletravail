@@ -13,7 +13,7 @@ export default function PerimeterModal() {
   const { perimeter, setPerimeter } = useContext(ModalContext)
   return (
     <Modal open={perimeter} setOpen={setPerimeter}>
-      <Title>Périmetre du simulateur</Title>
+      <Title>Périmètre du simulateur</Title>
       <Text>
         Ce simulateur n'inclus dans son calcul que les émissions directes des
         modes de transports, et la production et distribution de carburant et

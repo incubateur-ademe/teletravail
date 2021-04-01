@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 import useWindowSize from 'hooks/useWindowSize'
 
-import Footer from 'components/base/Footer'
 import ThemeToggle from 'components/base/ThemeToggle'
-import Share from 'components/base/Share'
-import Embed from 'components/base/Embed'
-import Contact from 'components/base/Contact'
+import Share from 'components/layout/Share'
+import Embed from 'components/layout/Embed'
+import Contact from 'components/layout/Contact'
+import Footer from 'components/layout/Footer'
 import ButtonsMore from 'components/misc/ButtonsMore'
 
 const Wrapper = styled.div`

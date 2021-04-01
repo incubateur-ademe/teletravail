@@ -6,7 +6,7 @@ import usePageView from 'hooks/usePageView'
 export default function UXProvider(props) {
   usePageView('Télétravail')
 
-  const [configuratorOpen, setConfiguratorOpen] = useState(false)
+  const [embedOpen, setEmbedOpen] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)
   const [contactOpen, setContactOpen] = useState(false)
   const [typeShare, setTypeShare] = useState('simulator')
@@ -15,19 +15,29 @@ export default function UXProvider(props) {
   return (
     <UXContext.Provider
       value={{
-        configuratorOpen,
-        setConfiguratorOpen: (value) => {
+        embedOpen,
+        setEmbedOpen: (value) => {
           if (value) {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            })
             setShareOpen(false)
             setContactOpen(false)
             setTypeShare('simulator')
           }
-          setConfiguratorOpen(value)
+          setEmbedOpen(value)
         },
         shareOpen,
         setShareOpen: (value) => {
           if (value) {
-            setConfiguratorOpen(false)
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            })
+            setEmbedOpen(false)
             setContactOpen(false)
             setTypeShare('simulator')
           }
@@ -36,8 +46,13 @@ export default function UXProvider(props) {
         contactOpen,
         setContactOpen: (value) => {
           if (value) {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            })
             setShareOpen(false)
-            setConfiguratorOpen(false)
+            setEmbedOpen(false)
             setTypeShare('simulator')
           }
           setContactOpen(value)

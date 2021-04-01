@@ -23,19 +23,12 @@ const Wrapper = styled.div`
 `
 export default function ButtonsMore() {
   const { kgco2 } = useContext(SearchContext)
-  const { setConfiguratorOpen, setShareOpen, setTypeShare } = useContext(
-    UXContext
-  )
+  const { setEmbedOpen, setShareOpen, setTypeShare } = useContext(UXContext)
 
   return (
     <Wrapper visible={kgco2 || kgco2 === 0}>
       <Button
         onClick={() => {
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-          })
           setShareOpen(true)
           setTypeShare('result')
         }}
@@ -49,7 +42,7 @@ export default function ButtonsMore() {
             left: 0,
             behavior: 'smooth',
           })
-          setConfiguratorOpen(true)
+          setEmbedOpen(true)
         }}
       >
         J'intègre ce simulateur à mon site

@@ -9,7 +9,8 @@ import ThemeToggle from 'components/base/ThemeToggle'
 import Emoji from 'components/base/Emoji'
 import ContactPrompt from 'components/base/ContactPrompt'
 import Button from 'components/base/Button'
-import Logo from './footer/Logo'
+import Logo from 'components/base/Logo'
+import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.div`
   position: relative;
@@ -61,6 +62,7 @@ export default function Footer(props) {
   return (
     <Wrapper background={props.background} id='about'>
       <Content>
+        <MobileButtons />
         <CenterSection>
           <ThemeToggle mobile />
         </CenterSection>

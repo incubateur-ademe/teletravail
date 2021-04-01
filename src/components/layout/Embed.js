@@ -10,19 +10,16 @@ import Select from 'components/misc/Select'
 
 export default function Embed() {
   const { themes, theme, setTheme } = useContext(StyleContext)
-  const {
-    configuratorOpen,
-    setConfiguratorOpen,
-    typeShare,
-    setTypeShare,
-  } = useContext(UXContext)
+  const { embedOpen, setEmbedOpen, typeShare, setTypeShare } = useContext(
+    UXContext
+  )
 
   return (
     <Panel
-      open={configuratorOpen}
+      open={embedOpen}
       toggleClose={() => {
         setTheme('default')
-        setConfiguratorOpen((prevOpen) => !prevOpen)
+        setEmbedOpen((prevOpen) => !prevOpen)
       }}
       index={0}
     >

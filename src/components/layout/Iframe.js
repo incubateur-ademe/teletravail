@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Header from 'components/layout/Header'
-import IframeFooter from 'components/base/IframeFooter'
+import IframeFooter from 'components/layout/IframeFooter'
 
 const Wrapper = styled.div``
 const Content = styled.div`
@@ -19,10 +18,7 @@ const Content = styled.div`
 export default function Iframe(props) {
   return (
     <Wrapper>
-      <Content>
-        <Header iframe />
-        {props.children}
-      </Content>
+      <Content>{props.children}</Content>
       <IframeFooter about='https://monimpacttransport.fr' />
     </Wrapper>
   )

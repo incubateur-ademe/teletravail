@@ -17,7 +17,7 @@ const StyledLink = styled.button`
   cursor: pointer;
 `
 export default function ContactPrompt(props) {
-  const { setConfiguratorOpen } = useContext(UXContext)
+  const { setEmbedOpen } = useContext(UXContext)
 
   return (
     <>
@@ -34,12 +34,7 @@ export default function ContactPrompt(props) {
             Personnalisez le et intégrez le facilement grace à{' '}
             <StyledLink
               onClick={() => {
-                window.scrollTo({
-                  top: 0,
-                  left: 0,
-                  behavior: 'smooth',
-                })
-                setConfiguratorOpen(true)
+                setEmbedOpen(true)
               }}
             >
               notre configurateur

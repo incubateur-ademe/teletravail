@@ -31,10 +31,10 @@ const Svg = styled.svg`
 `
 export default function Visible(props) {
   const { themes, accessibility, setAccessibility } = useContext(StyleContext)
-  const { configuratorOpen } = useContext(UXContext)
+  const { embedOpen } = useContext(UXContext)
 
   return (
-    !configuratorOpen && (
+    !embedOpen && (
       <Wrapper mobile={props.mobile}>
         <Switch
           onChange={() =>

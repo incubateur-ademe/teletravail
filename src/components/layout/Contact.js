@@ -65,7 +65,7 @@ export default function Contact() {
             setEmpty(false)
             const formData = new URLSearchParams()
             formData.append(
-              'form',
+              'form-name',
               ['integration', 'datagir', 'autre'].includes(user.objet)
                 ? 'contact'
                 : 'bug'

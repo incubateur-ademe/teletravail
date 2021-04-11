@@ -38,8 +38,7 @@ const Input = styled.select`
   color: transparent;
   background-color: transparent;
   border: none;
-  box-shadow: 0px ${(props) => (props.fancy ? '0.1875rem' : '0px')} 0px 0px
-    ${(props) => props.theme.colors.main};
+  box-shadow: 0px 0.1em 0px 0px ${(props) => props.theme.colors.main};
   transition: box-shadow 300ms ease-out;
   appearance: none;
   cursor: pointer;

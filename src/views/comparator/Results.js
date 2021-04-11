@@ -33,9 +33,11 @@ const Content = styled.div`
 const Color = styled.span`
   color: ${(props) => props.theme.colors.main};
   cursor: pointer;
+  text-decoration: ${(props) => (props.underline ? 'underline' : 'none')};
+  text-underline-offset: 0.2em;
 `
 const Small = styled.p`
-  margin: 0;
+  margin: 0.2rem 0 0;
   font-size: 0.75rem;
 `
 const StyledButton = styled(Button)`
@@ -68,13 +70,15 @@ export default function Results() {
           {Math.round(kgco2)} kgCO2<sub>e</sub>
         </Color>{' '}
         par an{' '}
-        <Color onClick={() => setPerimeter(true)}>sur mes déplacements</Color>.
-        Soit{' '}
+        <Color onClick={() => setPerimeter(true)} underline>
+          sur mes déplacements
+        </Color>
+        . Soit{' '}
         <Color onClick={() => setFootprint(true)}>
           {Math.round((kgco2 / 10000) * 10000) / 100}%
         </Color>{' '}
         de mon{' '}
-        <Color onClick={() => setFootprint(true)}>
+        <Color onClick={() => setFootprint(true)} underline>
           empreinte carbone
           <span
             dangerouslySetInnerHTML={{

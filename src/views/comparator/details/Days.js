@@ -9,7 +9,7 @@ export default function Days() {
   const { timing, days, setDays } = useContext(SearchContext)
   return (
     <Wrapper>
-      {timing === 'avant' ? `J'allais` : 'Je vais'} au travail{' '}
+      Je {timing === 'avant' ? `télétravaille` : 'télétravaillerais'}{' '}
       <Select
         value={days}
         onChange={setDays}

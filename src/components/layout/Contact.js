@@ -37,11 +37,7 @@ export default function Contact() {
   const [empty, setEmpty] = useState(false)
 
   const mutation = useMutation((formData) => {
-    return axios.post('/', formData, {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    })
+    return axios.post('/', formData)
   })
 
   console.log(mutation)
@@ -67,7 +63,7 @@ export default function Contact() {
             setEmpty(true)
           } else {
             setEmpty(false)
-            const formData = new FormData()
+            const formData = new URLSearchParams()
             formData.append(
               'form',
               ['integration', 'datagir', 'autre'].includes(user.objet)

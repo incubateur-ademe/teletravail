@@ -40,8 +40,6 @@ export default function Contact() {
     return axios.post('/', formData)
   })
 
-  console.log(mutation)
-
   return (
     <Panel
       open={contactOpen}

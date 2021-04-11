@@ -17,7 +17,6 @@ const Wrapper = styled.p`
     width: 100%;
     margin-bottom: 3rem;
     font-size: 1rem;
-    text-align: center;
   }
 `
 export default function Search() {

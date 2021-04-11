@@ -21,7 +21,6 @@ const Wrapper = styled.p`
   ${(props) => props.theme.mq.small} {
     width: 100%;
     font-size: 1rem;
-    text-align: center;
   }
 `
 export default function Details() {

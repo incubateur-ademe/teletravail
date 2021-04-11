@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { LinkedinShareButton } from 'react-share'
 
 const Svg = styled.svg``
-export default function Facebook(props) {
+export default function Linkedin(props) {
   return (
     <LinkedinShareButton
       url={props.url}

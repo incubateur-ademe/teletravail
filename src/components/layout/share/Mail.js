@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { EmailShareButton } from 'react-share'
 
 const Svg = styled.svg``
-export default function Facebook(props) {
+export default function Mail(props) {
   return (
     <EmailShareButton
       url={props.url}

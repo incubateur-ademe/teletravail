@@ -44,7 +44,10 @@ export default function ContactPrompt(props) {
         </>
       )}
       <Text>
-        <strong>Vous souhaitez réutiliser les données brutes ?</strong>
+        <strong>
+          Vous souhaitez réutiliser les données brutes ou obtenir de l'aide pour
+          intégrer ce simulateur ?
+        </strong>
         <br />
         Contactez nous à{' '}
         <MagicLink to='mailto:datagir@ademe.fr'>

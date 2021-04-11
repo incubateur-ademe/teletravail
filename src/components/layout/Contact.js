@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
+import { useMutation } from 'react-query'
+import axios from 'axios'
 
 import UXContext from 'utils/UXContext'
 import Panel from 'components/base/Panel'
@@ -7,13 +9,11 @@ import Button from 'components/base/Button'
 import TextInput from 'components/base/TextInput'
 import TextArea from 'components/base/TextArea'
 import Select from 'components/base/Select'
-import ContactPrompt from 'components/base/ContactPrompt'
 
 const Form = styled.form`
   width: 100%;
   margin-bottom: 3rem;
 `
-const Text = styled.p``
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -34,16 +34,17 @@ export default function Contact() {
     message: '',
   })
 
-  const [error, setError] = useState(false)
-  const [success, setSuccess] = useState(false)
+  const [empty, setEmpty] = useState(false)
 
-  function encode(data) {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-      )
-      .join('&')
-  }
+  const mutation = useMutation((formData) => {
+    return axios.post('/', formData, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    })
+  })
+
+  console.log(mutation)
 
   return (
     <Panel
@@ -54,20 +55,6 @@ export default function Contact() {
       index={2}
     >
       <h2>Nous contacter</h2>
-      <Text>
-        Vous souhaitez nous contacter pour{' '}
-        <strong>
-          obtenir de l'aide sur l'intégration des données ou des simulateurs
-        </strong>{' '}
-        ?<br />
-        Ou alors pour{' '}
-        <strong>
-          nous signaler un bug, nous faire une suggestion ou donner votre avis
-          sur ce simulateur
-        </strong>{' '}
-        ?<br />
-        Utilisez le formulaire ci‑dessous :
-      </Text>
       <Form
         id='contact'
         method='post'
@@ -75,39 +62,37 @@ export default function Contact() {
         name='contact'
         onSubmit={(e) => {
           e.preventDefault()
-          setSuccess(false)
-          setError(false)
-          if (!user.nom || !user.email || !user.message) {
-            setError(true)
+          if (!user.nom || !user.email || !user.objet || !user.message) {
+            mutation.reset()
+            setEmpty(true)
           } else {
-            fetch('/', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-              },
-              body: encode({
-                'form-name': 'contact',
-                ...user,
-              }),
-            })
-              .then(() => setSuccess(true))
-              .catch((error) => setSuccess(true))
+            setEmpty(false)
+            const formData = new FormData()
+            formData.append(
+              'form',
+              ['integration', 'datagir', 'autre'].includes(user.objet)
+                ? 'contact'
+                : 'bug'
+            )
+            Object.keys(user).map((key) => formData.append(key, user[key]))
+            mutation.mutate(formData)
           }
         }}
       >
         <TextInput
           name={'nom'}
           value={user.nom}
-          error={error && !user.nom}
+          error={empty && !user.nom}
           label={'Votre nom'}
           onChange={({ name, value }) =>
             setUser((prevUser) => ({ ...prevUser, [name]: value }))
           }
+          required
         />
         <TextInput
           type='email'
           name={'email'}
-          error={error && !user.email}
+          error={empty && !user.email}
           value={user.email}
           label={'Votre email'}
           onChange={({ name, value }) =>
@@ -122,38 +107,61 @@ export default function Contact() {
             setUser((prevUser) => ({ ...prevUser, [name]: value }))
           }
         >
-          <option value={null}></option>
-          <option value='transportmanquant'>
+          <option value={null} disabled></option>
+          <option value='integration'>
+            Je souhaite obtenir de l'aide pour intégrer le simulateur
+          </option>
+          <option value='datagir'>
+            Je souhaite en savoir plus sur Datagir
+          </option>
+          <option value='transport manquant'>
             Il manque un mode de transport
           </option>
-          <option value='integration'>
-            Je n'arrive pas à intégrer le simulateur
+          <option value='imprecision'>Le calcul n'est pas assez précis</option>
+          <option value='bug'>J'ai trouvé un bug</option>
+          <option value='amelioration'>
+            Je souhaite proposer une amélioration
           </option>
           <option value='autre'>Autre</option>
         </Select>
         {user.objet && (
           <Warning>
-            {user.objet === 'transportmanquant'
+            {user.objet === 'transport manquant'
               ? `Ce simulateur n'est qu'une illustration des différences entre les principaux modes de transport et n'a pas pour objectif d'être exhaustif.`
+              : ''}
+            {user.objet === 'imprecision'
+              ? `Ce simulateur propose un calcul simplifié afin de donner une idée d'ordre de grandeur. Réalisez votre bilan carbone sur Nos Gestes Climat afin d'obtenir un résultat plus précis.`
               : ''}
           </Warning>
         )}
         <TextArea
           name={'message'}
           value={user.message}
-          error={error && !user.message}
+          error={empty && !user.message}
           label={'Votre message'}
           onChange={({ name, value }) =>
             setUser((prevUser) => ({ ...prevUser, [name]: value }))
           }
         />
         <ButtonWrapper>
-          <Button submit>Envoyer mon message</Button>
+          <Button submit disabled={mutation.isLoading}>
+            Envoyer mon message
+          </Button>
         </ButtonWrapper>
-        {error && <Alert>Merci de remplir tous les champs</Alert>}
-        {success && <Alert>Merci ! Nous avons bien reçu votre message</Alert>}
+        {empty && <Alert>Merci de remplir tous les champs</Alert>}
+        {mutation.isError && (
+          <Alert>
+            Quelque chose n'a pas fonctionné :(
+            <br />({mutation.error.message})
+          </Alert>
+        )}
+        {mutation.isSuccess && (
+          <Alert>
+            Merci !<br />
+            Nous avons bien reçu votre message
+          </Alert>
+        )}
       </Form>
-      <ContactPrompt />
     </Panel>
   )
 }

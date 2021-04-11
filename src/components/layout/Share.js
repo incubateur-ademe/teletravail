@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
 
 import UXContext from 'utils/UXContext'
-import ContactPrompt from 'components/base/ContactPrompt'
 import Select from 'components/misc/Select'
 import Panel from 'components/base/Panel'
+import Integration from './share/Integration'
 import Link from './share/Link'
 import Mail from './share/Mail'
 import Facebook from './share/Facebook'
@@ -15,19 +15,16 @@ import Whatsapp from './share/Whatsapp'
 
 const ShareButtons = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 2rem;
 
-  ${(props) => props.theme.mq.small} {
-    justify-content: space-between;
-  }
-
   svg {
+    display: block;
     width: 3.5rem;
     height: auto;
 
     ${(props) => props.theme.mq.small} {
-      width: 3rem;
+      width: 2.5rem;
     }
 
     path {
@@ -36,9 +33,13 @@ const ShareButtons = styled.div`
   }
 `
 export default function Share() {
-  const { shareOpen, setShareOpen, typeShare, setTypeShare } = useContext(
-    UXContext
-  )
+  const {
+    shareOpen,
+    setShareOpen,
+    typeShare,
+    setTypeShare,
+    setEmbedOpen,
+  } = useContext(UXContext)
 
   let location = useLocation()
   const [url, setUrl] = useState(`${window.location.origin}/${location.search}`)
@@ -74,6 +75,7 @@ export default function Share() {
         />
       </h2>
       <ShareButtons>
+        <Integration onClick={() => setEmbedOpen(true)} />
         <Mail title={title} message={message} url={url} />
         <Facebook title={title} message={message} url={url} />
         <Twitter title={title} message={message} url={url} />
@@ -81,7 +83,6 @@ export default function Share() {
         <Whatsapp title={title} message={message} url={url} />
       </ShareButtons>
       <Link url={url} />
-      <ContactPrompt />
     </Panel>
   )
 }

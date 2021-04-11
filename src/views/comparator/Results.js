@@ -71,7 +71,7 @@ export default function Results() {
         <Color onClick={() => setPerimeter(true)}>sur mes déplacements</Color>.
         Soit{' '}
         <Color onClick={() => setFootprint(true)}>
-          {Math.round((kgco2 / 12000) * 10000) / 100}%
+          {Math.round((kgco2 / 10000) * 10000) / 100}%
         </Color>{' '}
         de mon{' '}
         <Color onClick={() => setFootprint(true)}>

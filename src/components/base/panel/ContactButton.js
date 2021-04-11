@@ -54,10 +54,9 @@ const Mail = styled.svg`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: block;
+  display: ${(props) => (props.open ? 'none' : 'block')};
   width: 2.25rem;
   height: auto;
-  opacity: ${(props) => (props.open ? 0 : 1)};
   transition: all 300ms ease-out;
 
   path {

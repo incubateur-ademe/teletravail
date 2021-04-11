@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { TwitterShareButton } from 'react-share'
 
 const Svg = styled.svg``
-export default function Facebook(props) {
+export default function Twitter(props) {
   return (
     <TwitterShareButton url={props.url} title={props.title}>
       <Svg height='512pt' viewBox='0 0 512 512' width='512pt'>

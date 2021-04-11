@@ -22,6 +22,10 @@ const Input = styled.select`
   background-size: 1.5rem 1.5rem;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%23ffffff' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
   cursor: pointer;
+
+  option {
+    color: black;
+  }
 `
 export default function Select(props) {
   return (

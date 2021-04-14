@@ -26,7 +26,7 @@ export default function InstallPrompt() {
   return (
     <Wrapper>
       {deferredPrompt && (
-        <Button onClick={deferredPrompt.prompt}>Installer l'app</Button>
+        <Button onClick={() => deferredPrompt.prompt()}>Installer l'app</Button>
       )}
     </Wrapper>
   )

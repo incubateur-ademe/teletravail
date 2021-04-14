@@ -35,7 +35,7 @@ export default function Embed() {
           ]}
         />
       </h2>
-      <Code id={'teletravail'} typeShare={typeShare} />
+      <Code id={'datagir-teletravail'} typeShare={typeShare} />
       <h3>Options d'intégration</h3>
       <Themes themes={themes} theme={theme} setTheme={setTheme} />
       <ContactPrompt configurator />

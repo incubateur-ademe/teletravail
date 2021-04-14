@@ -38,11 +38,11 @@ export const themes = {
       title: '"Poppins", sans-serif',
     },
     mq: {
-      small: `@media screen and (max-width: ${650}px)`,
-      medium: `@media screen and (max-width: ${1260}px)`,
-      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${1260}px)`,
-      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${1260}px)`,
-      large: `@media screen and (min-width: ${1800}px)`,
+      small: `@media screen and (max-width: ${46}em)`,
+      medium: `@media screen and (max-width: ${75}em)`,
+      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
+      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
+      large: `@media screen and (min-width: ${92}em)`,
       xlarge: `@media screen and (min-width: ${2000}px)`,
     },
   },
@@ -61,11 +61,11 @@ export const themes = {
       title: '"Poppins", sans-serif',
     },
     mq: {
-      small: `@media screen and (max-width: ${650}px)`,
-      medium: `@media screen and (max-width: ${1260}px)`,
-      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${1260}px)`,
-      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${1260}px)`,
-      large: `@media screen and (min-width: ${1800}px)`,
+      small: `@media screen and (max-width: ${46}em)`,
+      medium: `@media screen and (max-width: ${75}em)`,
+      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
+      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
+      large: `@media screen and (min-width: ${92}em)`,
       xlarge: `@media screen and (min-width: ${2000}px)`,
     },
   },
@@ -84,11 +84,11 @@ export const themes = {
       title: '"Poppins", sans-serif',
     },
     mq: {
-      small: `@media screen and (max-width: ${650}px)`,
-      medium: `@media screen and (max-width: ${1260}px)`,
-      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${1260}px)`,
-      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${1260}px)`,
-      large: `@media screen and (min-width: ${1800}px)`,
+      small: `@media screen and (max-width: ${46}em)`,
+      medium: `@media screen and (max-width: ${75}em)`,
+      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
+      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
+      large: `@media screen and (min-width: ${92}em)`,
       xlarge: `@media screen and (min-width: ${2000}px)`,
     },
   },
@@ -130,5 +130,9 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     color: ${(props) => props.theme.colors.main};
+  }
+
+  option {
+    color: #010101;
   }
 `

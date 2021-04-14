@@ -6,13 +6,12 @@ import IframeFooter from 'components/layout/IframeFooter'
 const Wrapper = styled.div``
 const Content = styled.div`
   position: relative;
-  max-width: 46rem;
-  margin: 0 auto 2em;
-  padding-bottom: 5vw;
+  width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 0.5rem;
 
   ${(props) => props.theme.mq.small} {
-    width: auto;
-    margin: 0 3vw 2em;
+    width: 100%;
   }
 `
 export default function Iframe(props) {

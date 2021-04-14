@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
 import copy from 'copy-to-clipboard'
+
+import StyleContext from 'utils/StyleContext'
 
 const Wrapper = styled.div`
   margin-bottom: 2em;
@@ -34,17 +36,18 @@ const Explication = styled.p`
 `
 export default function Code(props) {
   let location = useLocation()
-
+  const { theme } = useContext(StyleContext)
   const [script, setScript] = useState(null)
+
   useEffect(() => {
     setScript(
       `<script id="${props.id || 'datagir'}" src="${
         window.location.origin
       }/iframe.js" data-search="${
-        props.typeShare === 'result' ? location.search : ''
+        props.typeShare === 'result' ? location.search : '?theme=' + theme
       }"></script>`
     )
-  }, [location.search, props.id, props.typeShare])
+  }, [location.search, props.id, props.typeShare, theme])
 
   const [copied, setCopied] = useState(false)
   return (

@@ -14,7 +14,7 @@ export default function Transportation() {
   const { distance, transportation, setTransportation } = useContext(
     SearchContext
   )
-  console.log(transportations)
+
   return (
     <Wrapper visible={distance}>
       <br />

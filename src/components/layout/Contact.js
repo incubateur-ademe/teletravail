@@ -9,11 +9,8 @@ import Button from 'components/base/Button'
 import TextInput from 'components/base/TextInput'
 import TextArea from 'components/base/TextArea'
 import Select from 'components/base/Select'
-import MagicLink from 'components/base/MagicLink'
+import ContactPrompt from 'components/base/ContactPrompt'
 
-const Text = styled.p`
-  margin-bottom: 2rem;
-`
 const Form = styled.form`
   width: 100%;
   margin-bottom: 3rem;
@@ -53,11 +50,7 @@ export default function Contact() {
       index={2}
     >
       <h2>Nous contacter</h2>
-      <Text>
-        Vous pouvez nous écrire à{' '}
-        <MagicLink to='mailto:datagir@ademe.fr'>datagir@ademe.fr</MagicLink> ou
-        utiliser le formulaire ci‑dessous :
-      </Text>
+
       <Form
         id='contact'
         method='post'
@@ -165,6 +158,7 @@ export default function Contact() {
           </Alert>
         )}
       </Form>
+      <ContactPrompt contact />
     </Panel>
   )
 }

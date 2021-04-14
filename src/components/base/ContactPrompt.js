@@ -21,7 +21,7 @@ export default function ContactPrompt(props) {
 
   return (
     <>
-      {!props.configurator && (
+      {!props.configurator && !props.contact && (
         <>
           <Title>
             Comment intégrer ces données à mon site ou application ?
@@ -55,16 +55,18 @@ export default function ContactPrompt(props) {
         </MagicLink>{' '}
         pour bénéficier de notre expertise et accompagnement.
       </Text>
-      <Text>
-        <strong>Vous souhaitez réutiliser le code du simulateur ?</strong>
-        <br />
-        Ce simulateur est développé de manière ouverte (open source). L’ensemble
-        du code est{' '}
-        <MagicLink to='https://github.com/datagir/monimpacttransport'>
-          disponible librement
-        </MagicLink>
-        .
-      </Text>
+      {!props.contact && (
+        <Text>
+          <strong>Vous souhaitez réutiliser le code du simulateur ?</strong>
+          <br />
+          Ce simulateur est développé de manière ouverte (open source).
+          L’ensemble du code est{' '}
+          <MagicLink to='https://github.com/datagir/monimpacttransport'>
+            disponible librement
+          </MagicLink>
+          .
+        </Text>
+      )}
     </>
   )
 }

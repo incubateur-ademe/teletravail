@@ -69,10 +69,7 @@ export default function SearchProvider(props) {
         transportation,
         setTransportation,
         adjustment,
-        setAdjustment: (value) => {
-          console.log(value)
-          setAdjustment(value)
-        },
+        setAdjustment,
         kgco2,
       }}
     >

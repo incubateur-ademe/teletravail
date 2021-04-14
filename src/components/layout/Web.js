@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import useWindowSize from 'hooks/useWindowSize'
 
 import ThemeToggle from 'components/base/ThemeToggle'
+import InstallPrompt from 'components/base/InstallPrompt'
 import Share from 'components/layout/Share'
 import Embed from 'components/layout/Embed'
 import Contact from 'components/layout/Contact'
@@ -44,7 +45,6 @@ export default function Web(props) {
   return (
     <Wrapper>
       <ThemeToggle />
-
       <Content>
         <FullScreen windowHeight={height}>
           {props.children}
@@ -55,6 +55,7 @@ export default function Web(props) {
       <Embed />
       <Share />
       <Contact />
+      <InstallPrompt />
     </Wrapper>
   )
 }

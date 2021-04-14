@@ -18,7 +18,7 @@ export default function Iframe(props) {
   return (
     <Wrapper>
       <Content>{props.children}</Content>
-      <IframeFooter about='https://monimpacttransport.fr' />
+      <IframeFooter about='https://teletravail.monimpacttransport.fr' />
     </Wrapper>
   )
 }

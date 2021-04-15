@@ -12,7 +12,7 @@ export default function UXProvider(props) {
   const [typeShare, setTypeShare] = useState('simulator')
   const [details, setDetails] = useState(false)
 
-  const [installPrompt, setInstallPrompt] = useState(null)
+  const [installPrompt, setInstallPrompt] = useState({ prompt: () => '' })
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', (e) => {
       setInstallPrompt(e)

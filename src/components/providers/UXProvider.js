@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import UXContext from 'utils/UXContext'
 import usePageView from 'hooks/usePageView'
@@ -11,6 +11,14 @@ export default function UXProvider(props) {
   const [contactOpen, setContactOpen] = useState(false)
   const [typeShare, setTypeShare] = useState('simulator')
   const [details, setDetails] = useState(false)
+
+  const [installPrompt, setInstallPrompt] = useState(null)
+  useEffect(() => {
+    window.addEventListener('beforeinstallprompt', (e) => {
+      setInstallPrompt(e)
+      console.log(`'beforeinstallprompt' event was fired.`)
+    })
+  }, [])
 
   return (
     <UXContext.Provider
@@ -61,6 +69,7 @@ export default function UXProvider(props) {
         setDetails,
         typeShare,
         setTypeShare,
+        installPrompt,
       }}
     >
       {props.children}

@@ -6,7 +6,7 @@ import Panel from 'components/base/Panel'
 import Themes from './embed/Themes'
 import Code from './embed/Code'
 import ContactPrompt from 'components/base/ContactPrompt'
-import Select from 'components/misc/Select'
+import Select from 'components/base/FancySelect'
 
 export default function Embed() {
   const { themes, theme, setTheme } = useContext(StyleContext)

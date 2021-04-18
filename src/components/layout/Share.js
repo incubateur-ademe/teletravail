@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
 
 import UXContext from 'utils/UXContext'
-import Select from 'components/misc/Select'
+import Select from 'components/base/FancySelect'
 import Panel from 'components/base/Panel'
 import Integration from './share/Integration'
 import Link from './share/Link'

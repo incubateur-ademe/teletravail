@@ -14,7 +14,7 @@ export default function FootprintModal() {
 
   return (
     <Modal open={footprint} setOpen={setFootprint}>
-      <Title>Empreinte Carbonne annuelle</Title>
+      <Title>Empreinte Carbone anuelle</Title>
       <Text>
         Aujourd'hui, un·e français·e en émet en moyenne 10 tonnes des gaz à
         effet de serre (GES) par an (
@@ -38,7 +38,7 @@ export default function FootprintModal() {
       </Text>
       <Text>
         Si vous souhaitez aller plus loin dans votre démarche, vous pouvez
-        calculer votre empreinte carbonne grace à notre simulateur{' '}
+        calculer votre empreinte carbone grace à notre simulateur{' '}
         <MagicLink to={'https://nosgestesclimat.fr/'}>
           Nos Gestes Climat
         </MagicLink>

@@ -5,10 +5,10 @@ import useWindowSize from 'hooks/useWindowSize'
 
 import ThemeToggle from 'components/base/ThemeToggle'
 import InstallButton from 'components/base/InstallButton'
-import Share from 'components/layout/Share'
-import Embed from 'components/layout/Embed'
-import Contact from 'components/layout/Contact'
-import Footer from 'components/layout/Footer'
+import ShareWrapper from 'components/wrappers/ShareWrapper'
+import EmbedWrapper from 'components/wrappers/EmbedWrapper'
+import ContactWrapper from 'components/wrappers/ContactWrapper'
+import FooterWrapper from 'components/wrappers/FooterWrapper'
 import ButtonsMore from 'components/misc/ButtonsMore'
 
 const Wrapper = styled.div`
@@ -50,11 +50,11 @@ export default function Web(props) {
           {props.children}
           <ButtonsMore />
         </FullScreen>
-        <Footer />
+        <FooterWrapper />
       </Content>
-      <Embed />
-      <Share />
-      <Contact />
+      <EmbedWrapper />
+      <ShareWrapper />
+      <ContactWrapper />
       <InstallButton />
     </Wrapper>
   )

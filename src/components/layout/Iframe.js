@@ -18,7 +18,7 @@ export default function Iframe(props) {
   return (
     <Wrapper>
       <Content>{props.children}</Content>
-      <IframeFooter about='https://teletravail.monimpacttransport.fr' />
+      <IframeFooter about={process.env.REACT_APP_URL} />
     </Wrapper>
   )
 }

@@ -6,7 +6,6 @@ import repufrancaise from './footer/repufrancaise.jpg'
 
 import MagicLink from 'components/base/MagicLink'
 import ThemeToggle from 'components/base/ThemeToggle'
-import Emoji from 'components/base/Emoji'
 import ContactPrompt from 'components/base/ContactPrompt'
 import Button from 'components/base/Button'
 import Logo from 'components/base/Logo'
@@ -37,8 +36,6 @@ const Section = styled.div`
 const CenterSection = styled(Section)`
   align-items: center;
 `
-const Text = styled.p``
-const Title = styled.h2``
 const LogosWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -66,61 +63,13 @@ export default function Footer(props) {
         <CenterSection>
           <ThemeToggle mobile />
         </CenterSection>
-        <Section>
-          <Title>D'ou viennent ces données ?</Title>
-          <Text>
-            Ce simulateur réutilise les données de la{' '}
-            <MagicLink to='https://www.bilans-ges.ademe.fr/fr/accueil/contenu/index/page/presentation/siGras/0'>
-              Base Carbone
-            </MagicLink>
-            . Il s’agit d’une{' '}
-            <strong>base de données publique de facteurs d'émissions</strong>,
-            nécessaires à la réalisation d’un bilan d’émissions de gaz à effet
-            de serre (GES) et plus généralement tout exercice de comptabilité
-            carbone.
-          </Text>
-          <Text>
-            <strong>Équivalent CO₂ par personne en France.</strong>
-          </Text>
-          <Text>
-            <Emoji>⚠️</Emoji>{' '}
-            <strong>
-              Sont inclus les émissions directes, et la production et
-              distribution de carburant et d'électricité
-            </strong>
-            .
-          </Text>
-          <Text>
-            <Emoji>⚠️</Emoji> <strong>La construction des véhicules</strong>{' '}
-            (voiture, vélo, batterie, train, avion...){' '}
-            <strong>et des infrastructures</strong> (routes, rails,
-            aéroports...) <strong>n'est pas incluse.</strong>
-          </Text>
-          <Text>
-            <Emoji>⚠️</Emoji>{' '}
-            <strong>
-              Ne sont pas non plus inclus tous les effets rebonds possibles
-            </strong>{' '}
-            (consommation d'électricité du foyer, achat de matériel pour le
-            télétravail, etc...).
-          </Text>
-          <Text>
-            Si vous souhaitez aller plus loin dans votre démarche, vous pouvez{' '}
-            <strong>
-              calculer votre empreinte sur le climat grace à notre simulateur{' '}
-              <MagicLink to={'https://nosgestesclimat.fr/'}>
-                Nos Gestes Climat
-              </MagicLink>
-            </strong>
-            .
-          </Text>
-        </Section>
+        <Section>{props.children}</Section>
         <Section>
           <ContactPrompt />
         </Section>
         <Section>
-          <Title>Qui sommes-nous ?</Title>
-          <Text>
+          <h2>Qui sommes-nous ?</h2>
+          <p>
             <MagicLink to='https://datagir.ademe.fr/'>
               <strong>Datagir</strong>
             </MagicLink>{' '}
@@ -128,8 +77,8 @@ export default function Footer(props) {
             <MagicLink to='https://www.ademe.fr/'>ADEME</MagicLink> et
             l’incubateur de la DINUM{' '}
             <MagicLink to='https://beta.gouv.fr/'>beta.gouv.fr</MagicLink>.
-          </Text>
-          <Text>
+          </p>
+          <p>
             Notre mission est de{' '}
             <strong>
               diffuser les informations et données environnementales en
@@ -142,7 +91,7 @@ export default function Footer(props) {
             </strong>{' '}
             par l'appropriation et l’intégration de ces données afin d’apporter
             l’information au plus près des citoyens.
-          </Text>
+          </p>
           <StyledButton to='https://datagir.ademe.fr/#applications'>
             Voir tous nos simulateurs
           </StyledButton>

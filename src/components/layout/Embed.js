@@ -8,7 +8,7 @@ import Code from './embed/Code'
 import ContactPrompt from 'components/base/ContactPrompt'
 import Select from 'components/base/FancySelect'
 
-export default function Embed() {
+export default function Embed(props) {
   const { themes, theme, setTheme } = useContext(StyleContext)
   const { embedOpen, setEmbedOpen, typeShare, setTypeShare } = useContext(
     UXContext
@@ -35,8 +35,9 @@ export default function Embed() {
           ]}
         />
       </h2>
-      <Code id={'datagir-teletravail'} typeShare={typeShare} />
+      <Code id={props.id} typeShare={typeShare} />
       <h3>Options d'intégration</h3>
+      {props.children}
       <Themes themes={themes} theme={theme} setTheme={setTheme} />
       <ContactPrompt configurator />
     </Panel>

@@ -32,7 +32,7 @@ const ShareButtons = styled.div`
     }
   }
 `
-export default function Share() {
+export default function Share(props) {
   const {
     shareOpen,
     setShareOpen,
@@ -50,11 +50,6 @@ export default function Share() {
       }`
     )
   }, [location.search, typeShare])
-
-  const title = 'Télétravail - Mon Impact Transport'
-
-  const message =
-    'Vous êtes en télétravail ou vous souhaitez vous y mettre ? Calculez facilement l’impact sur le climat !'
 
   return (
     <Panel
@@ -76,11 +71,11 @@ export default function Share() {
       </h2>
       <ShareButtons>
         <Integration onClick={() => setEmbedOpen(true)} />
-        <Mail title={title} message={message} url={url} />
-        <Facebook title={title} message={message} url={url} />
-        <Twitter title={title} message={message} url={url} />
-        <Linkedin title={title} message={message} url={url} />
-        <Whatsapp title={title} message={message} url={url} />
+        <Mail title={props.title} message={props.message} url={url} />
+        <Facebook title={props.title} message={props.message} url={url} />
+        <Twitter title={props.title} message={props.message} url={url} />
+        <Linkedin title={props.title} message={props.message} url={url} />
+        <Whatsapp title={props.title} message={props.message} url={url} />
       </ShareButtons>
       <Link url={url} />
     </Panel>

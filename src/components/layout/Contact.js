@@ -25,7 +25,7 @@ const Alert = styled.p`
   text-align: center;
 `
 
-export default function Contact() {
+export default function Contact(props) {
   const { contactOpen, setContactOpen } = useContext(UXContext)
 
   const [user, setUser] = useState({
@@ -110,24 +110,21 @@ export default function Contact() {
           <option value='datagir'>
             Je souhaite en savoir plus sur Datagir
           </option>
-          <option value='transport manquant'>
-            Il manque un mode de transport
-          </option>
-          <option value='imprecision'>Le calcul n'est pas assez précis</option>
+          {props.options.map((option) => (
+            <option value={option.value}>{option.label}</option>
+          ))}
           <option value='bug'>J'ai trouvé un bug</option>
           <option value='amelioration'>
             Je souhaite proposer une amélioration
           </option>
           <option value='autre'>Autre</option>
         </Select>
-        {user.objet && (
+        {props.options.find((option) => option.value === user.objet) && (
           <Warning>
-            {user.objet === 'transport manquant'
-              ? `Ce simulateur n'est qu'une illustration des différences entre les principaux modes de transport et n'a pas pour objectif d'être exhaustif.`
-              : ''}
-            {user.objet === 'imprecision'
-              ? `Ce simulateur propose un calcul simplifié afin de donner une idée d'ordre de grandeur. Réalisez votre bilan carbone sur Nos Gestes Climat afin d'obtenir un résultat plus précis.`
-              : ''}
+            {
+              props.options.find((option) => option.value === user.objet)
+                .disclaimer
+            }
           </Warning>
         )}
         <TextArea

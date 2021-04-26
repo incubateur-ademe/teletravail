@@ -38,7 +38,11 @@ export default function FooterWrapper() {
       <p>
         <Emoji>⚠️</Emoji>{' '}
         <strong>
-          Ne sont pas non plus inclus tous les effets rebonds possibles
+          Ne sont pas non plus inclus tous les{' '}
+          <MagicLink to='https://librairie.ademe.fr/mobilite-et-transport/3776-caracterisation-des-effets-rebond-induits-par-le-teletravail.html'>
+            effets rebonds
+          </MagicLink>{' '}
+          possibles
         </strong>{' '}
         (consommation d'électricité du foyer, achat de matériel pour le
         télétravail, etc...).

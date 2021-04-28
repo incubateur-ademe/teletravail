@@ -65,19 +65,20 @@ export default function Results() {
           ? 'Maintenant que je travaille'
           : 'Si je travaillais'}{' '}
         de chez moi, {timing === 'avant' ? `j'économise` : `j'économiserais`}{' '}
-        <Color onClick={() => setCO2E(true)}>
-          {Math.round(kgco2)} kgCO2<sub>e</sub>
+        <Color onClick={() => setCO2E(true)} underline>
+          {Math.round(kgco2)} kgCO2
+        </Color>
+        <Color>
+          <sub>e</sub>
         </Color>{' '}
         par an{' '}
-        <Color onClick={() => setPerimeter(true)} underline>
-          sur mes déplacements
-        </Color>
-        . Soit{' '}
-        <Color onClick={() => setFootprint(true)}>
+        <Color onClick={() => setPerimeter(true)}>sur mes déplacements</Color>.
+        Soit{' '}
+        <Color onClick={() => setFootprint(true)} underline>
           {Math.round((kgco2 / 10000) * 10000) / 100}%
         </Color>{' '}
         de mon{' '}
-        <Color onClick={() => setFootprint(true)} underline>
+        <Color onClick={() => setFootprint(true)}>
           empreinte carbone
           <span
             dangerouslySetInnerHTML={{

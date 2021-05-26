@@ -5,6 +5,7 @@ export default function ModalProvider(props) {
   const [CO2E, setCO2E] = useState(false)
   const [footprint, setFootprint] = useState(false)
   const [perimeter, setPerimeter] = useState(false)
+  const [installInstructions, setInstallInstructions] = useState(false)
 
   return (
     <ModalContext.Provider
@@ -15,6 +16,8 @@ export default function ModalProvider(props) {
         setFootprint,
         perimeter,
         setPerimeter,
+        installInstructions,
+        setInstallInstructions,
       }}
     >
       {props.children}

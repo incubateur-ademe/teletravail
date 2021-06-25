@@ -45,7 +45,12 @@ export default function FooterWrapper() {
           possibles
         </strong>{' '}
         (consommation d'électricité du foyer, achat de matériel pour le
-        télétravail, etc...).
+        télétravail, etc...). Pour donner un ordre de grandeur,{' '}
+        <MagicLink to='https://monconvertisseurco2.fr/?co2=248&equivalents=27006_27002_27976_27010_206589'>
+          la fabrication d'un écran d'ordinateur émet autant que 1 285 km de
+          voiture (248 kgCO2e)
+        </MagicLink>
+        .
       </p>
       <p>
         Si vous souhaitez aller plus loin dans votre démarche, vous pouvez{' '}

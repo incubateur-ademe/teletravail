@@ -66,7 +66,7 @@ export default function Distance(props) {
         onFocus={() => setPristine(false)}
         pristine={pristine}
       />
-      <Underline htmlFor={props.name}> km</Underline>
+      <Underline htmlFor={props.name}> {props.label || 'km'}</Underline>
     </Wrapper>
   )
 }

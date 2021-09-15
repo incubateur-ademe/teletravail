@@ -33,13 +33,27 @@ export default function SearchProvider(props) {
   const [adjustment, setAdjustment] = useQueryParam('adjustment', StringParam)
 
   const [kgco2, setKgco2] = useState(null)
+  const [totalTime, setTotalTime] = useState(null)
+
+  const [time, setTime] = useQueryParam('temps', NumberParam)
 
   useEffect(() => {
-    if (transportations && distance && transportation) {
+    if (transportations && transportation && distance) {
       const selectedTransportation = transportations.find(
         (transportationObject) => transportationObject.id === transportation
       )
       if (selectedTransportation) {
+        setTime(Math.round((60 / selectedTransportation.speed) * distance))
+      }
+    }
+  }, [transportations, transportation, distance, setTime])
+  useEffect(() => {
+    if (transportations && distance && transportation && time) {
+      const selectedTransportation = transportations.find(
+        (transportationObject) => transportationObject.id === transportation
+      )
+      if (selectedTransportation) {
+        console.log(selectedTransportation)
         const finalAdjustment =
           adjustment || adjustment === 0 ? adjustment : distance * 0.25
         setKgco2(
@@ -49,11 +63,21 @@ export default function SearchProvider(props) {
             (52 - holidays - 1)) /
             1000
         )
+        setTotalTime(Math.round((time / 60) * days * (52 - holidays - 1)))
       }
     } else {
       setKgco2(null)
+      setTotalTime(null)
     }
-  }, [transportations, distance, days, holidays, transportation, adjustment])
+  }, [
+    transportations,
+    distance,
+    time,
+    days,
+    holidays,
+    transportation,
+    adjustment,
+  ])
 
   return (
     <SearchContext.Provider
@@ -62,6 +86,8 @@ export default function SearchProvider(props) {
         setTiming,
         distance,
         setDistance,
+        time,
+        setTime,
         days,
         setDays,
         holidays,
@@ -71,6 +97,7 @@ export default function SearchProvider(props) {
         adjustment,
         setAdjustment,
         kgco2,
+        totalTime,
       }}
     >
       {props.children}

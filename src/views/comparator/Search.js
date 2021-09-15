@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Timing from './search/Timing'
 import Distance from './search/Distance'
 import Transportation from './search/Transportation'
+import Time from './search/Time'
 
 const Wrapper = styled.p`
   align-self: flex-start;
@@ -25,6 +26,7 @@ export default function Search() {
       <Timing />
       <Distance />
       <Transportation />
+      <Time />
     </Wrapper>
   )
 }

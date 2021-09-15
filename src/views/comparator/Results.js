@@ -31,7 +31,7 @@ const Content = styled.div`
 `
 const Color = styled.span`
   color: ${(props) => props.theme.colors.main};
-  cursor: pointer;
+  cursor: ${(props) => (props.onClick ? 'pointer' : 'normal')};
   text-decoration: ${(props) => (props.underline ? 'underline' : 'none')};
   text-underline-offset: 0.2em;
 `
@@ -54,7 +54,7 @@ const StyledButton = styled(Button)`
 export default function Results() {
   const { details, setDetails } = useContext(UXContext)
 
-  const { timing, kgco2 } = useContext(SearchContext)
+  const { timing, kgco2, totalTime } = useContext(SearchContext)
 
   const { setCO2E, setFootprint, setPerimeter } = useContext(ModalContext)
 
@@ -65,6 +65,7 @@ export default function Results() {
           ? 'Maintenant que je travaille'
           : 'Si je travaillais'}{' '}
         de chez moi, {timing === 'avant' ? `j'économise` : `j'économiserais`}{' '}
+        <Color>{totalTime} heures</Color> et{' '}
         <Color onClick={() => setCO2E(true)} underline>
           {Math.round(kgco2)} kgCO2
         </Color>

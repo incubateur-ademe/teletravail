@@ -27,18 +27,20 @@ Voici un résultat de recherche sur le site Télétravail-Mon Impact Transport q
         },
         facebook: {
           simulator: {
-            quote: 'Évaluez vos économies de CO2 grâce au Télétravail 💸🌍',
+            quote:
+              'Évaluez vos économies de CO2 grâce au Télétravail 💸🌍 Grâce à ce simulateur Datagir, retrouvez l’impact positif du télétravail sur l’environnement !',
           },
           result: {
-            quote: `Découvrez les émissions de CO2 que j’ai évitées grâce au télétravail ! `,
+            quote: `Découvrez les émissions de CO2 que j’ai évitées grâce au télétravail ! Grâce à ce simulateur Datagir, j’ai pu évaluer les émissions évitées lorsque que je me déplace moins pour aller travailler et voici le résultat ! 🌍 Et dans votre cas à combien arrivez-vous ?`,
           },
         },
         twitter: {
           simulator: {
-            title: 'Évaluez vos économies de CO2 grâce au Télétravail 💸🌍',
+            title:
+              'Évaluez vos économies de CO2 grâce au Télétravail 💸🌍 Grâce à ce simulateur @_datagir, retrouvez l’impact positif du télétravail sur l’environnement !',
           },
           result: {
-            title: `Découvrez les émissions de CO2 que j’ai évitées grâce au télétravail ! `,
+            title: `Découvrez les émissions de CO2 que j’ai évitées grâce au télétravail ! Grâce à ce simulateur @_datagir, j’ai pu évaluer les émissions évitées lorsque que je me déplace moins pour aller travailler et voici le résultat ! 🌍 Et dans votre cas à combien arrivez-vous ?`,
           },
         },
         linkedin: {
@@ -51,10 +53,11 @@ Voici un résultat de recherche sur le site Télétravail-Mon Impact Transport q
         },
         whatsapp: {
           simulator: {
-            title: 'Évaluez vos économies de CO2 grâce au Télétravail 💸🌍',
+            title:
+              'Évaluez vos économies de CO2 grâce au Télétravail 💸🌍 Grâce à ce simulateur Datagir, retrouvez l’impact positif du télétravail sur l’environnement !',
           },
           result: {
-            title: `Découvrez les émissions de CO2 que j’ai évitées grâce au télétravail ! `,
+            title: `Découvrez les émissions de CO2 que j’ai évitées grâce au télétravail ! Grâce à ce simulateur Datagir, j’ai pu évaluer les émissions évitées lorsque que je me déplace moins pour aller travailler et voici le résultat ! 🌍 Et dans votre cas à combien arrivez-vous ?`,
           },
         },
       }}

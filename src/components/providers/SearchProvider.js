@@ -53,7 +53,6 @@ export default function SearchProvider(props) {
         (transportationObject) => transportationObject.id === transportation
       )
       if (selectedTransportation) {
-        console.log(selectedTransportation)
         const finalAdjustment =
           adjustment || adjustment === 0 ? adjustment : distance * 0.25
         setKgco2(

@@ -1,14 +1,16 @@
 import { iframeResize } from 'iframe-resizer'
 
-const script = document.getElementById('datagir-teletravail')
+const script =
+  document.getElementById('mon-impact-transport') ||
+  document.getElementById('datagir-teletravail') ||
+  document.getElementById('ecolab-transport')
 
 const domain = script.dataset.domain
-const search = script.dataset.search
 const source = window.location.href.toString()
 
 const src = `${
-  domain || 'https://teletravail.monimpacttransport.fr'
-}/embed/${search}${search && search.includes('?') ? '&' : '?'}source=${source}`
+  domain || 'https://monimpacttransport.fr'
+}/teletravail?source=${source}&iframe=1`
 
 const iframe = document.createElement('iframe')
 

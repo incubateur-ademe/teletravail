@@ -2,3 +2,6 @@
 
 https://teletravail.monimpacttransport.fr  https://monimpacttransport.fr/teletravail
 http://teletravail.monimpacttransport.fr  https://monimpacttransport.fr/teletravail
+
+https://teletravail.monimpacttransport.fr/*  https://monimpacttransport.fr/teletravail/:splat 301!
+http://teletravail.monimpacttransport.fr/*  https://monimpacttransport.fr/teletravail/:splat 301!
